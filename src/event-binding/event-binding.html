@@ -1,0 +1,16 @@
+<p>event-binding works!</p>
+
+Name : <input type="text" #username>
+<input type="button" value="greet" (click)="showMessage(username)">
+
+<h1> {{msg}} </h1>
+
+<hr>
+No1 : <input type="text" #no1><br/>
+No2: <input type="text" #no2><br/>
+<input type="button" value="Sum" (click)="sum(no1,no2)">
+
+<h1>total : {{total}} </h1>
+
+
+
