@@ -1,0 +1,67 @@
+<p>control-directive works!</p>
+Roll No:  <input type="number" [(ngModel)]="rollno">
+Name : <input type="text" [(ngModel)]="name">
+Maths : <input  type="number" [(ngModel)]="maths" (focusout)="checkmarks()">
+@if(maths<0 || maths>100)
+{
+ <h5> invaild maths marks (1-100) </h5>
+  }
+science: <input type="number" [(ngModel)]="science">
+
+<input type="button" value="save" (click)="save()" [disabled]="issave">
+
+<!--<br>-->
+<!--Roll No:{{rollno}}-->
+<!--Name : {{name}}-->
+<!--Maths :{{maths}}-->
+<!--science :{{science}}-->
+
+<!--@if(maths<0 || maths>100){-->
+<!--  <h5 style="color:red">invalid maths marks</h5>-->
+<!--}-->
+
+
+
+<!--@if (maths>34 && science >35){-->
+<!--  <h1 style="color:green">Pass</h1>-->
+<!--} @else {-->
+<!--  <h1 style="color:red"> Fail</h1>-->
+<!--}-->
+<!--@if ((maths+science)/2>90) {-->
+<!--  <h1> Grade A </h1>-->
+
+<!--} @else if ((maths+science)/2>70){-->
+<!--  <h1> Grade B</h1>-->
+<!--}-->
+<!--@else if((maths+science)/2>55){-->
+<!--  <h1> Grade C</h1>-->
+<!--} @else {-->
+<!--   <h1> Grade D</h1>-->
+<!--}-->
+<hr>
+
+<table>
+   <tr>
+     <th>Roll No</th> <th>Name</th> <th> Maths</th> <th>Science</th> <th>status</th>
+   </tr>
+@for (student of students; track $index) {
+  <tr>
+    <td>{{student.rollno}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.maths}}</td>
+    <td>{{student.science}}</td>
+    @if (student.maths>34 && student.science >35){
+      <td style="color:green">Pass</td>
+    } @else {
+      <td style="color:red"> Fail</td>
+    }
+  </tr>
+
+}
+</table>
+
+
+
+
+
+

@@ -5,10 +5,11 @@ import {ChildComponent2} from '../child-component2/child-component2';
 import {PropertyBinding} from '../property-binding/property-binding';
 import {EventBinding} from '../event-binding/event-binding';
 import {TwowayBinding} from '../twoway-binding/twoway-binding';
+import {ControlDirective} from '../control-directive/control-directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ChildComponent1, ChildComponent2, PropertyBinding, EventBinding, TwowayBinding],
+  imports: [RouterOutlet,  ControlDirective],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
